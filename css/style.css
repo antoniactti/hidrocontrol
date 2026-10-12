@@ -30,6 +30,7 @@ main h2 {
 /* Define o fundo da página de autenticação. */
 .body-login {
     background-color: #ffffff;
+    background-image: url('../src/index.png');
 }
 
 /* Divide a tela entre formulário e imagem. */
