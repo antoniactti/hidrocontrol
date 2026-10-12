@@ -20,7 +20,7 @@ body {
 /* Imagem de fundo do painel, com camada clara para manter a leitura. */
 .body-painel {
     background-image:
-        linear-gradient(rgba(244, 247, 246, 0.403), rgba(244, 247, 246, 0.366)),
+        linear-gradient(rgba(244, 247, 246, 0.53), rgba(244, 247, 246, 0.558)),
         url('../src/index.png');
     background-size: cover;
     background-position: center;
