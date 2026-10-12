@@ -123,7 +123,7 @@ $alertas = [];
 // Cria um alerta quando o reservatório está baixo.
 if ($situacaoNivel === "NÍVEL BAIXO") {
     $alertas[] = [
-        "tipo" => "atencao",
+        "tipo" => $classeNivel,
         "titulo" => "Nível do reservatório baixo",
         "mensagem" => "O nível está abaixo de 30%. Verifique as condições do reservatório."
     ];
@@ -132,7 +132,7 @@ if ($situacaoNivel === "NÍVEL BAIXO") {
 // Cria um alerta quando o reservatório está alto.
 elseif ($situacaoNivel === "NÍVEL ALTO") {
     $alertas[] = [
-        "tipo" => "atencao",
+        "tipo" => $classeNivel,
         "titulo" => "Nível do reservatório alto",
         "mensagem" => "O nível está acima de 90%. Verifique as condições operacionais."
     ];
