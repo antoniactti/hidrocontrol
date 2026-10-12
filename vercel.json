@@ -1,0 +1,30 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.9.0"
+    }
+  },
+  "routes": [
+    {
+      "src": "^/$",
+      "dest": "/api/index.php"
+    },
+    {
+      "src": "^/index\.php$",
+      "dest": "/api/index.php"
+    },
+    {
+      "src": "^/css/(.)$",
+      "dest": "/css/$1"
+    },
+    {
+      "src": "^/src/(.)$",
+      "dest": "/src/$1"
+    },
+    {
+      "handle": "filesystem"
+    }
+  ]
+}

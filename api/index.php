@@ -21,9 +21,9 @@ $nomeUsuario = $_SESSION['nome_usuario'] ?? "Operador";
 // ==================================================
 
 // Importa as classes utilizadas no monitoramento.
-require_once __DIR__ . "/class/operadorclass.php";
-require_once __DIR__ . "/class/turbinaclass.php";
-require_once __DIR__ . "/class/usinaclass.php";
+require_once DIR . "/../class/operadorclass.php";
+require_once DIR . "/../class/turbinaclass.php";
+require_once DIR . "/../class/usinaclass.php";
 
 // ==================================================
 // 3. CRIAÇÃO DOS OPERADORES
@@ -84,7 +84,7 @@ $turbina3 = new Turbina(
     $operadoraMariaAntonia
 );
 
-// Agrupa as turbinas para facilitar a iteração.
+// Agrupa as turbinas para facilitar a interação.
 $turbinas = [$turbina1, $turbina2, $turbina3];
 
 // ==================================================
