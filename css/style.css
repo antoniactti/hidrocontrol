@@ -1,0 +1,444 @@
+/* ==================================================
+   1. CONFIGURAÇÕES GERAIS
+================================================== */
+
+/* Padroniza o cálculo das dimensões dos elementos. */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Define a aparência geral das páginas. */
+body {
+    background-color: #f4f7f6;
+    color: #333333;
+    line-height: 1.5;
+}
+
+/* Padroniza os títulos das seções. */
+main h2 {
+    color: #0f3b57;
+    margin-bottom: 15px;
+}
+
+/* ==================================================
+   2. TELA DE LOGIN
+================================================== */
+
+/* Define o fundo da página de autenticação. */
+.body-login {
+    background-color: #ffffff;
+}
+
+/* Divide a tela entre formulário e imagem. */
+.login-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Área do formulário de login. */
+.login-form-area {
+    width: 40%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Cabeçalho com a logo e a identificação do sistema. */
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+/* Identificação institucional do sistema. */
+.badge-scada {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Organiza os campos e o botão do formulário. */
+.form-login {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+/* Formatação dos rótulos dos campos. */
+.form-login label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Formatação dos campos de entrada. */
+.form-login input {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Caixa com informações de segurança. */
+.aviso-seguranca {
+    background-color: #f0f8ff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #555555;
+}
+
+/* Botão de autenticação. */
+.btn-login {
+    background-color: #0f3b57;
+    color: #ffffff;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Altera a cor do botão durante a interação. */
+.btn-login:hover {
+    background-color: #0b2a3f;
+}
+
+/* Área visual ao lado do formulário. */
+.login-image-area {
+    width: 60%;
+    min-height: 100vh;
+    background-color: #0f3b57;
+    background-image: url('../src/login.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Sobreposição que melhora a leitura do texto. */
+.info-overlay {
+    background-color: rgba(15, 59, 87, 0.9);
+    color: #ffffff;
+    padding: 40px;
+    width: 100%;
+}
+
+/* Espaçamento do texto de apresentação. */
+.info-overlay h2 {
+    margin-bottom: 10px;
+}
+
+/* ==================================================
+   3. CABEÇALHO DO PAINEL
+================================================== */
+
+/* Organiza a logo, o menu e as opções do usuário. */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Limita a largura da logo. */
+.logo img {
+    display: block;
+    max-width: 150px;
+    height: auto;
+}
+
+/* Organiza os links de navegação. */
+.menu a {
+    text-decoration: none;
+    color: #0f3b57;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* Realça o link quando o cursor passa sobre ele. */
+.menu a:hover {
+    color: #2676a3;
+}
+
+/* Organiza os elementos do perfil do usuário. */
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Estiliza o link de saída. */
+.link-sair {
+    color: #c62828;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Realça o link de saída. */
+.link-sair:hover {
+    text-decoration: underline;
+}
+
+/* ==================================================
+   4. CONTEÚDO PRINCIPAL
+================================================== */
+
+/* Centraliza e limita a largura do painel. */
+main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Espaçamento da apresentação inicial. */
+.boas-vindas {
+    margin-bottom: 30px;
+}
+
+/* Título de boas-vindas. */
+.boas-vindas h1 {
+    color: #0f3b57;
+    margin-bottom: 5px;
+}
+
+/* Texto introdutório do painel. */
+.boas-vindas p {
+    color: #666666;
+}
+
+/* Separa as principais áreas do painel. */
+#indicadores,
+#turbinas,
+#alertas {
+    margin-bottom: 35px;
+}
+
+/* ==================================================
+   5. CARDS E GRIDS
+================================================== */
+
+/* Distribui os cartões em três colunas. */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+/* Aparência dos cartões de indicadores. */
+.card-indicador {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Títulos dos cartões. */
+.card-indicador h3 {
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 15px;
+}
+
+/* Valores principais dos indicadores. */
+.card-indicador > p:not(.texto-estado-e-operador) {
+    font-size: 32px;
+    font-weight: bold;
+    color: #0f3b57;
+    margin-bottom: 10px;
+}
+
+/* ==================================================
+   6. STATUS OPERACIONAIS
+================================================== */
+
+/* Formatação comum dos indicadores de situação. */
+.situacao-nivel,
+.situacao-termica {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Situação normal. */
+.normal {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+/* Situação que exige atenção. */
+.atencao {
+    background-color: #fff8e1;
+    color: #f57f17;
+}
+
+/* Situação crítica. */
+.critico {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+/* Informações complementares da turbina. */
+.texto-estado-e-operador {
+    font-size: 14px;
+    color: #666666;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+/* ==================================================
+   7. CENTRAL DE ALERTAS
+================================================== */
+
+/* Organiza os alertas verticalmente. */
+.lista-alertas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Formatação geral dos cartões de alerta. */
+.card-alerta {
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #cccccc;
+}
+
+/* Alerta de situação crítica. */
+.card-alerta.critico {
+    background-color: #ffebee;
+    border-left-color: #c62828;
+}
+
+/* Alerta de atenção. */
+.card-alerta.atencao {
+    background-color: #fff8e1;
+    border-left-color: #f57f17;
+}
+
+/* Títulos dos alertas. */
+.card-alerta h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Cartão exibido quando não há alertas. */
+.card-alerta.sem-alertas {
+    background-color: #e8f5e9;
+    border-left-color: #2e7d32;
+}
+
+/* ==================================================
+   8. RODAPÉ
+================================================== */
+
+/* Identificação ao final do painel. */
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    color: #666666;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+}
+
+/* ==================================================
+   9. RESPONSIVIDADE
+================================================== */
+
+/* Ajustes para tablets e celulares. */
+@media (max-width: 900px) {
+
+    /* Empilha o formulário e a imagem do login. */
+    .login-container {
+        flex-direction: column;
+    }
+
+    /* O formulário ocupa toda a largura. */
+    .login-form-area {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    /* A imagem passa a ocupar a largura disponível. */
+    .login-image-area {
+        width: 100%;
+        min-height: 300px;
+    }
+
+    /* Empilha os elementos do cabeçalho. */
+    .cabecalho {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    /* Organiza a navegação em telas menores. */
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Reduz o espaçamento do painel. */
+    main {
+        padding: 20px;
+    }
+
+    /* Os cartões passam a ocupar uma coluna. */
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ajustes adicionais para celulares estreitos. */
+@media (max-width: 480px) {
+
+    /* Reduz o espaçamento interno do login. */
+    .login-form-area {
+        padding: 25px 15px;
+    }
+
+    /* Permite que a identificação se ajuste à largura. */
+    .login-header {
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+    }
+
+    /* Reduz o espaço lateral do painel. */
+    main {
+        padding: 15px;
+    }
+
+    /* Reduz os valores grandes dos indicadores. */
+    .card-indicador > p:not(.texto-estado-e-operador) {
+        font-size: 26px;
+    }
+
+    /* Reduz o espaçamento do texto sobre a imagem. */
+    .info-overlay {
+        padding: 25px 20px;
+    }
+}
