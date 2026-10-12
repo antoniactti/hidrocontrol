@@ -197,7 +197,7 @@ foreach ($turbinas as $turbina) {
     <link rel="icon" type="image/png" href="src/icon.png">
 </head>
 
-<body>
+<body class="body-painel">
 
     <!-- ==================================================
          CABEÇALHO E NAVEGAÇÃO

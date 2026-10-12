@@ -17,6 +17,17 @@ body {
     line-height: 1.5;
 }
 
+/* Imagem de fundo do painel, com camada clara para manter a leitura. */
+.body-painel {
+    background-image:
+        linear-gradient(rgba(244, 247, 246, 0.85), rgba(244, 247, 246, 0.85)),
+        url('../src/index.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 /* Padroniza os títulos das seções. */
 main h2 {
     color: #0f3b57;
@@ -30,7 +41,6 @@ main h2 {
 /* Define o fundo da página de autenticação. */
 .body-login {
     background-color: #ffffff;
-    background-image: url('../src/index.png');
 }
 
 /* Divide a tela entre formulário e imagem. */
