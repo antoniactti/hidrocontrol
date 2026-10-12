@@ -1,72 +1,38 @@
 <?php
 
-// ==================================================
-// 1. INICIALIZAÇÃO DA SESSÃO
-// ==================================================
+require_once __DIR__ . "/../class/auth.php";
 
-// Permite acessar e manipular os dados da sessão.
-session_start();
-
-// ==================================================
-// 2. VERIFICAÇÃO DE AUTENTICAÇÃO
-// ==================================================
-
-// Redireciona usuários autenticados para o painel.
-if (isset($_SESSION['logado']) && $_SESSION['logado'] === true) {
-    header("Location: index.php");
+// Redireciona usuários já autenticados para o painel.
+if (authUsuario() !== null) {
+    header("Location: /");
     exit;
 }
 
-// Inicializa a mensagem de erro.
 $mensagemErro = "";
 
-// ==================================================
-// 3. PROCESSAMENTO DO FORMULÁRIO
-// ==================================================
-
-// Verifica se o formulário foi enviado pelo método POST.
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    // Obtém os dados enviados e evita campos inexistentes.
     $matricula = trim($_POST['matricula'] ?? "");
     $senha = $_POST['senha'] ?? "";
 
     // Credenciais fictícias para fins didáticos.
-    // Em um sistema real, os dados viriam de um banco de dados.
     $matriculaValida = "1025";
     $senhaValida = "123456";
 
-    // Verifica se os campos foram preenchidos corretamente.
     if ($matricula !== "" && $senha !== "") {
 
-        // Compara os dados informados com as credenciais simuladas.
-        if (
-            $matricula === $matriculaValida
-            && $senha === $senhaValida
-        ) {
+        if ($matricula === $matriculaValida && $senha === $senhaValida) {
 
-            // Gera um novo identificador para a sessão autenticada.
-            session_regenerate_id(true);
+            authLogin("Carlos");
 
-            // Registra a autenticação do usuário.
-            $_SESSION['logado'] = true;
-
-            // Armazena o nome exibido no painel.
-            $_SESSION['nome_usuario'] = "Carlos";
-
-            // Redireciona para o painel de monitoramento.
-            header("Location: index.php");
+            header("Location: /");
             exit;
 
         } else {
-
-            // Informa que as credenciais não correspondem.
             $mensagemErro = "Matrícula ou senha incorretos. Tente novamente.";
         }
 
     } else {
-
-        // Informa que os campos são obrigatórios.
         $mensagemErro = "Preencha a matrícula e a senha.";
     }
 }

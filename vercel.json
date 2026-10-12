@@ -2,29 +2,18 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "functions": {
-    "api/index.php": {
+    "api/*.php": {
       "runtime": "vercel-php@0.9.0"
     }
   },
   "routes": [
-    {
-      "src": "^/$",
-      "dest": "/api/index.php"
-    },
-    {
-      "src": "^/index\.php$",
-      "dest": "/api/index.php"
-    },
-    {
-      "src": "^/css/(.)$",
-      "dest": "/css/$1"
-    },
-    {
-      "src": "^/src/(.)$",
-      "dest": "/src/$1"
-    },
-    {
-      "handle": "filesystem"
-    }
+    { "src": "^/class/.*", "status": 404 },
+    { "src": "^/$", "dest": "/api/index.php" },
+    { "src": "^/index\\.php$", "dest": "/api/index.php" },
+    { "src": "^/login\\.php$", "dest": "/api/login.php" },
+    { "src": "^/logout\\.php$", "dest": "/api/logout.php" },
+    { "src": "^/css/(.*)$", "dest": "/css/$1" },
+    { "src": "^/src/(.*)$", "dest": "/src/$1" },
+    { "handle": "filesystem" }
   ]
 }

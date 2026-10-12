@@ -1,29 +1,26 @@
 <?php
 
 // ==================================================
-// 1. CONTROLE DE SESSÃO
+// 1. CONTROLE DE ACESSO
 // ==================================================
 
-// Inicia a sessão para verificar a autenticação.
-session_start();
+require_once __DIR__ . "/../class/auth.php";
+
+$nomeUsuario = authUsuario();
 
 // Impede o acesso ao painel sem login válido.
-if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
-    header("Location: login.php");
+if ($nomeUsuario === null) {
+    header("Location: /login.php");
     exit;
 }
-
-// Define um nome padrão caso a sessão não possua o nome.
-$nomeUsuario = $_SESSION['nome_usuario'] ?? "Operador";
 
 // ==================================================
 // 2. CARREGAMENTO DAS CLASSES
 // ==================================================
 
-// Importa as classes utilizadas no monitoramento.
-require_once DIR . "/../class/operadorclass.php";
-require_once DIR . "/../class/turbinaclass.php";
-require_once DIR . "/../class/usinaclass.php";
+require_once __DIR__ . "/../class/operadorclass.php";
+require_once __DIR__ . "/../class/turbinaclass.php";
+require_once __DIR__ . "/../class/usinaclass.php";
 
 // ==================================================
 // 3. CRIAÇÃO DOS OPERADORES
