@@ -64,8 +64,8 @@ class Turbina
         if($this->estadoTurbina === true){
             return "Ligada";
         }else{
-            return "Desligada";
-        
+            return "Desligada";  
+        }
     }
 
     // Retorna o nome do operador responsável pela turbina.
