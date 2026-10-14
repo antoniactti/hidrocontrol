@@ -58,11 +58,14 @@ class Turbina
     // Retorna o estado atual da turbina.
     public function verificarEstadoTurbina(): string
     {
-        if ($this->estadoTurbina === true && $this->temperaturaTurbina < 70 && $this->temperaturaTurbina <= 85) {
-            return "Ligada";
+        if ($this->temperaturaTurbina > 85) {
+            $this->estadoTurbina = false;
         }
-
-        return "Desligada";
+        if($this->estadoTurbina === true){
+            return "Ligada";
+        }else{
+            return "Desligada";
+        
     }
 
     // Retorna o nome do operador responsável pela turbina.
