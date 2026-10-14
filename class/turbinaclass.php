@@ -51,15 +51,14 @@ class Turbina
             return "ATENÇÃO - Temperatura elevada";
         } else {
             return "CRÍTICA - Temperatura acima do limite recomendado. "
-                . "Verifique as condições operacionais da turbina "
-                . "e avalie a necessidade de desligamento preventivo.";
+                . "Verifique as condições operacionais da turbina.";
         }
     }
 
     // Retorna o estado atual da turbina.
     public function verificarEstadoTurbina(): string
     {
-        if ($this->estadoTurbina === true) {
+        if ($this->estadoTurbina === true && $this->temperaturaTurbina < 70 && $this->temperaturaTurbina <= 85) {
             return "Ligada";
         }
 
